@@ -17,13 +17,14 @@ def calculate():
 # to find the tip, you will need to have the total bill amount and multiply it by what ever tip amount desired ie 12, 20, 30
 #To find the amount fo reach person you will take the total amount plus tip and divide it by the number of guest    
     head_count = int(input('How many people willl spit the bill amount? '))
-    each = (amount + (0.01 * tip) * amount // head_count)
-    print(f"Each guest will have to pay ${each}")
+    each = (amount + (0.01 * tip) * amount / head_count)
+    round_each = round(each, 2)
+    print(f"Each guest will have to pay ${round_each}")
 calculate()
 # we need to include an option to continue to calculate for other tip amounts
 another_amount = input('Would you like to enter another amount?')
-if another_amount == YES:
+while another_amount == YES:
     calculate()
-else:
-    print('I hope you have enjoyed using your Python Tip Calculator!')
+        
+print('I hope you have enjoyed using your Python Tip Calculator!')
     
