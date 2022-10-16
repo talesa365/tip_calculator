@@ -6,28 +6,34 @@ def calculate():
 
     print("Welcome To The Python Tip Calculator")
         #Prompt the user to enter the amount on the bill
-    meal = int(float(input("What is the total bill?: ")))
+    meal = float(input("What is the total bill?: "))
         #Prompt the user for the % tip they'd like to leave
     tip = int(input("What % tip would you like to give?: "))
         #Prompt the user for the # of people splitting the bill
     people = int(input("How many people are splitting the bill?: "))
           
     
-        #figure the sales tax from the bill amount      
-        #update the bill to include the tax   
-        #figure the tip on the bill amount pre tax 
-        #calculate the total bill to include tax and tip
+          
+        
+       
+       
      
     
 
-    tax = meal * .10
+    tax = .01
     print(tax)
-    tip_percent = int(tip/100)
-    print(tip)
-    total_cost = int(tip_percent + tax + meal) 
-    print(total_cost)
+    #figure the tip on the bill amount pre tax 
+    tip_amount = meal * tip/100
+    print(f'Your meal was ${meal} and your tip is ${tip_amount}')
+    #figure the sales tax from the bill amount    
+    tax_amount = meal * tax
+    #calculate the total bill to include tax and tip
+    total_cost = tip_amount + tax_amount + meal
+    #update the bill to include the tax   
+    print(f' Your total with tax is ${total_cost}')
     bill_per_person = total_cost / people 
-    final_total = float(bill_per_person)
+    final_total = round(bill_per_person)
+ 
      
     #Calculate the amount each person owes based on the bill and tips the user entered
             
