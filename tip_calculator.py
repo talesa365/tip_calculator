@@ -1,30 +1,61 @@
 
-from tkinter.messagebox import YES
+from pickle import TRUE
 
 
 def calculate():
-    print('Welcome to your Python tip calculator')
-#bill amounts are often in decimals so you will need to use the float method
-    bill_amount = float(input('Enter the total amount of your bill: $' ))
+
+    print("Welcome To The Python Tip Calculator")
+        #Prompt the user to enter the amount on the bill
+    meal = int(float(input("What is the total bill?: ")))
+        #Prompt the user for the % tip they'd like to leave
+    tip = int(input("What % tip would you like to give?: "))
+        #Prompt the user for the # of people splitting the bill
+    people = int(input("How many people are splitting the bill?: "))
+          
     
-# to find the total amount of your bill including tax you must take your bill amount and multiply it by 10%
-    tax = float(bill_amount * 0.10)
-    amount = tax + bill_amount
-    print(f'Your total bill amount including tax is ${amount}')
+        #figure the sales tax from the bill amount      
+        #update the bill to include the tax   
+        #figure the tip on the bill amount pre tax 
+        #calculate the total bill to include tax and tip
+     
+    
+
+    tax = meal * .10
+    print(tax)
+    tip_percent = int(tip/100)
+    print(tip)
+    total_cost = int(tip_percent + tax + meal) 
+    print(total_cost)
+    bill_per_person = total_cost / people 
+    final_total = float(bill_per_person)
+     
+    #Calculate the amount each person owes based on the bill and tips the user entered
+            
+    print(f'Your total bill is {final_total} and each person should pay {final_total}')
+ 
+    
+    
+            
+      
+
+
+ 
+    
    
-# now lets find out the tip amount
-    tip = float(input('What percentage of your bill would you like to give for a tip? '))
-# to find the tip, you will need to have the total bill amount and multiply it by what ever tip amount desired ie 12, 20, 30
-#To find the amount fo reach person you will take the total amount plus tip and divide it by the number of guest    
-    head_count = int(input('How many people willl spit the bill amount? '))
-    each = (amount + (0.01 * tip) * amount / head_count)
-    round_each = round(each, 2)
-    print(f"Each guest will have to pay ${round_each}")
-calculate()
-# we need to include an option to continue to calculate for other tip amounts
-another_amount = input('Would you like to enter another amount?')
-while another_amount == YES:
-    calculate()
+   
         
-print('I hope you have enjoyed using your Python Tip Calculator!')
-    
+ 
+    # we need to include an option to continue to calculate for other tip amounts
+
+    another_amount = input('Would you like to enter another amount?')
+   
+    if another_amount == "n":
+        print('I hope you have enjoyed using your Python Tip Calculator!')
+        return
+    else:
+        another_amount == "y"
+        return calculate()
+
+        
+            
+calculate()    
