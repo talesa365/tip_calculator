@@ -20,7 +20,7 @@ def calculate():
      
     
 
-    tax = .01
+    tax = .10
     print(tax)
     #figure the tip on the bill amount pre tax 
     tip_amount = meal * tip/100
